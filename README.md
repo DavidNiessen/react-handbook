@@ -5,6 +5,11 @@
         <h3>Working With Components, Props and JSX</h3>
         <p>1: Pizza Menu</p>
     </li>
+    <li>
+        <h3>State, Events and Forms: Interactive Components</h3>
+        <p>2: Steps Component</p>
+        <p>3: Travel List</p>
+    </li>
 </ul>
 <br>
 <br>

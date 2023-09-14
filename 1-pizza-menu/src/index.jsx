@@ -85,7 +85,7 @@ const Menu = () => {
 					</p>
 
 					<ul className="pizzas">
-						{pizzas.map((pizza) => (
+						{pizzas.map(pizza => (
 							<Pizza key={pizza.name} pizzaObject={pizza} />
 						))}
 					</ul>
