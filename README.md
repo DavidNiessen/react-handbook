@@ -9,6 +9,7 @@
         <h3>State, Events and Forms: Interactive Components</h3>
         <p>2: Steps Component</p>
         <p>3: Travel List</p>
+        <p>4: Eat-'N-Split</p>
     </li>
 </ul>
 <br>
