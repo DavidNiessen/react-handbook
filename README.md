@@ -1,14 +1,6 @@
 # JavaScript Handbook
 ## IMPORTANT: Most projects contain a README file which explains some of React's concepts.
 
-
-  - 5: usePopcorn
-- #### useEffect and Data Fetching
-  - 5: usePopcorn
-- #### useRef and Custom Hooks
-  - 5: usePopcorn
-
-
 ### #1: REACT FUNDAMENTALS
 - #### Working With Components, Props and JSX
 | Project       | Concepts explained in README                                                                                                   |
