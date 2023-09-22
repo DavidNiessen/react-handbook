@@ -1,4 +1,4 @@
-import Logo from './Logo';
+import { Logo } from './Logo';
 
 const Navbar = ({ children }) => (
 	<nav className="nav-bar">

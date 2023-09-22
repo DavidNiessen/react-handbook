@@ -1,4 +1,4 @@
-import Movie from './Movie';
+import { Movie } from './Movie';
 
 const MovieList = ({ movies, onSelectMovie }) => (
 	<ul className="list list-movies">

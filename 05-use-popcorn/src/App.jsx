@@ -15,10 +15,14 @@ import { API_KEY } from './config';
 const App = () => {
 	const [query, setQuery] = useState('');
 	const [movies, setMovies] = useState([]);
-	const [watched, setWatched] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState('');
 	const [selectedId, setSelectedId] = useState(null);
+
+	const [watched, setWatched] = useState(() => {
+		const storedValue = localStorage.getItem('watched');
+		return storedValue ? JSON.parse(storedValue) : [];
+	});
 
 	useEffect(() => {
 		if (query.length < 3) {
@@ -26,12 +30,18 @@ const App = () => {
 			setError(false);
 			return;
 		}
+
+		handleCloseMovie();
+
+		const controller = new AbortController();
+
 		(async () => {
 			try {
 				setError('');
 				setIsLoading(true);
 				const response = await fetch(
 					`http://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`,
+					{ signal: controller.signal },
 				);
 
 				if (!response.ok)
@@ -42,13 +52,17 @@ const App = () => {
 				if (data.Response === 'False') throw new Error('Movie not found');
 
 				setMovies(data.Search);
+				setError('');
 			} catch (error) {
 				console.error(error.message);
-				setError(error.message);
+
+				if (error.name !== 'AbortError') setError(error.message);
 			} finally {
 				setIsLoading(false);
 			}
 		})();
+
+		return () => controller.abort();
 	}, [query]);
 
 	const handleSelectMovie = id =>
@@ -60,6 +74,10 @@ const App = () => {
 
 	const handleDeleteWatched = id =>
 		setWatched(watched => watched.filter(movie => movie.imdbID !== id));
+
+	useEffect(() => {
+		localStorage.setItem('watched', JSON.stringify(watched));
+	}, [watched]);
 
 	return (
 		<>

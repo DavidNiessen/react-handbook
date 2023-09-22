@@ -1,4 +1,4 @@
-import WatchedMovie from './WatchedMovie';
+import { WatchedMovie } from './WatchedMovie';
 
 const WatchedMovieList = ({ watched, onDeleteWatched }) => {
 	return (

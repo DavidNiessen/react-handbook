@@ -13,6 +13,17 @@ We can also pass a default value as an argument.
 const [isOpen, setIsOpen] = useState(false);
 ```
 
+## Lazy initial state
+This is another way to set the initial state using a function.<br>
+Just passing a function call into the useState function like this
+`useState(someFunction());`
+would execute it every time the component is rendered.<br>
+To avoid this, we can pass in a callback function which will only be
+called on the initialization of the state.
+```jsx
+const [state, setState] = useState(someFunction);
+```
+
 ## Reading state
 We can read state by accessing the destructured state value.
 ```jsx
@@ -32,9 +43,19 @@ setIsOpen(true);
 
 **IMPORTANT**: When the new state depends on the current state, we should 
 **NEVER** pass the current state into the updater function.<br>
+This is because the current state value might be outdated because React performs
+state updates asynchronously.
+
 Instead, we can do this:
 ```jsx
 setIsOpen(isOpen => !isOpen);
+```
+
+**IMPORTANT**: You should still not mutate the state directly. 
+If you, for example, need to add a value to an array, copy it:
+
+```jsx
+setStateArray(stateArray => [...stateArray, newValue]);
 ```
 
 ## What state can hold

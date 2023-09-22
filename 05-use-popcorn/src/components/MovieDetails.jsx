@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import StarRating from './StarRating';
-import Loader from './Loader';
+import { StarRating } from './StarRating';
+import { Loader } from './Loader';
 import { API_KEY } from '../config';
 
 const MovieDetails = ({ selectedId, onCloseMovie, onAddWatched, watched }) => {
@@ -41,6 +41,18 @@ const MovieDetails = ({ selectedId, onCloseMovie, onAddWatched, watched }) => {
 	};
 
 	useEffect(() => {
+		const callback = event => {
+			if (event.code === 'Escape') {
+				onCloseMovie();
+			}
+		};
+
+		document.addEventListener('keydown', callback);
+
+		return () => document.removeEventListener('keydown', callback);
+	}, [onCloseMovie]);
+
+	useEffect(() => {
 		(async () => {
 			setIsLoading(true);
 			const response = await fetch(
@@ -57,7 +69,7 @@ const MovieDetails = ({ selectedId, onCloseMovie, onAddWatched, watched }) => {
 		if (!title) return;
 		document.title = title;
 		return () => (document.title = 'usePopcorn');
-	}, [title]);
+	}, []);
 
 	return (
 		<div className="details">
