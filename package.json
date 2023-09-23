@@ -1,0 +1,12 @@
+{
+  "name": "react-handbook",
+  "version": "1.0.0",
+  "description": "React projects and handbook",
+  "author": "SkillCode",
+  "license": "ISC",
+  "homepage": "./",
+  "devDependencies": {
+    "eslint": "^8.50.0",
+    "prettier": "^3.0.3"
+  }
+}
