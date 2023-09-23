@@ -21,17 +21,7 @@
 ### #2: INTERMEDIATE REACT
 
 - #### Components, Composition and Reusability
-
-| Project       | Concepts explained in README                                          |
-|---------------|-----------------------------------------------------------------------|
-| 5: usePopcorn | The useEffect Hook, the useRef Hook, useState vs useRef, custom Hooks |
-
 - #### useEffect and Data Fetching
-
-| Project       | Concepts explained in README                                          |
-|---------------|-----------------------------------------------------------------------|
-| 5: usePopcorn | The useEffect Hook, the useRef Hook, useState vs useRef, custom Hooks |
-
 - #### useRef and Custom Hooks
 
 | Project       | Concepts explained in README                                          |
@@ -39,5 +29,6 @@
 | 5: usePopcorn | The useEffect Hook, the useRef Hook, useState vs useRef, custom Hooks |
 
 Credits
+
 - [Jonas Schmedtmann's React course](https://www.udemy.com/course/the-ultimate-react-course/)
 - http://w3schools.com/react/
