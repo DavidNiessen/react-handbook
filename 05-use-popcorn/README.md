@@ -3,6 +3,7 @@
 - 1: The useEffect Hook
 - 2: The useRef Hook
 - 3: useState vs useRef
+- 4: Custom Hooks
 
 # -> 1: The useEffect Hook
 
@@ -31,7 +32,7 @@ component unmounts or before the effect is executed again.
 
 ```jsx
 useEffect(() => {
-	// Runs on every render
+	// Runs after every render
 });
 ```
 
@@ -39,7 +40,7 @@ useEffect(() => {
 
 ```jsx
 useEffect(() => {
-	// Runs only on the first render
+	// Runs only after the first render
 }, []);
 ```
 
@@ -125,4 +126,56 @@ const MyComponent = () => {
 
 # -> 3: useState vs useRef
 
-![keynote](https://github.com/zSkillCode/react-handbook/assets/68539499/4fdd2296-c43c-4a5d-9f1e-2ddf8b28ca22)
+![slides 001](https://github.com/zSkillCode/react-handbook/assets/68539499/f1fd7238-6a4a-42e5-a291-511342dde5db)
+
+# -> 4: Custom Hooks
+
+Hooks are reusable functions.<br>
+When you have component logic that needs to be used by multiple components,
+we can extract that logic to a custom Hook.<br>
+Custom Hooks **must** start with "use" in order to be recognized as Hooks by React.
+Example: useFetch.
+
+## When to create custom Hooks?
+
+![slides 002](https://github.com/zSkillCode/react-handbook/assets/68539499/7233f8dd-90f8-4fa8-8e7f-636178ff3e38)
+
+## Example
+
+Hook
+
+```jsx
+import { useState } from 'react';
+
+function useCounter(initialValue = 0) {
+	const [count, setCount] = useState(initialValue);
+
+	const increment = () => setCount(prevCount => prevCount + 1);
+	const decrement = () => setCount(prevCount => prevCount - 1);
+
+	return { count, increment, decrement };
+}
+
+export { useCounter };
+```
+
+Component that uses the Hook
+
+```jsx
+import React from 'react';
+import { useCounter } from './useCounter';
+
+function CounterComponent() {
+	const { count, increment, decrement } = useCounter(0);
+
+	return (
+		<div>
+			<button onClick={decrement}>-</button>
+			<span>{count}</span>
+			<button onClick={increment}>+</button>
+		</div>
+	);
+}
+
+export { CounterComponent };
+```
