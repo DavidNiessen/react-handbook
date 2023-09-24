@@ -28,6 +28,13 @@
 |---------------|-----------------------------------------------------------------------|
 | 5: usePopcorn | The useEffect Hook, the useRef Hook, useState vs useRef, custom Hooks |
 
+- #### LEGACY: Class-Based React
+
+| Project           | Concepts explained in README |
+|-------------------|------------------------------|
+| 6: Classy Weather |                              |
+
+<br>
 Credits
 
 - [Jonas Schmedtmann's React course](https://www.udemy.com/course/the-ultimate-react-course/)
