@@ -40,7 +40,7 @@
 
 | Project       | Concepts explained in README |
 |---------------|------------------------------|
-| 7: React Quiz |                              |
+| 7: React Quiz | The useReducer Hook          |
 
 <br>
 Credits
