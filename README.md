@@ -34,6 +34,14 @@
 |-------------------|------------------------------|
 | 6: Classy Weather |                              |
 
+### #3: ADVANCED REACT + REDUX
+
+- #### The useReducer Hook
+
+| Project       | Concepts explained in README |
+|---------------|------------------------------|
+| 7: React Quiz |                              |
+
 <br>
 Credits
 
