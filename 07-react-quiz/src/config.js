@@ -1,3 +1,4 @@
+export const SECS_PER_QUESTIONS = 30;
 // Simulates a network delay (in ms)
 export const SIMULATE_NETWORK_DELAY_MS = 2_000;
 // If true, simulates a network error

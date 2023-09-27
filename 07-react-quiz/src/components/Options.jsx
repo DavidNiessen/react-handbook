@@ -2,7 +2,6 @@ import { ACTION_TYPE } from './App';
 
 const Options = ({ question, dispatch, answer }) => {
 	const hasAnswered = answer !== null;
-	console.log(hasAnswered);
 
 	return (
 		<div className="options">

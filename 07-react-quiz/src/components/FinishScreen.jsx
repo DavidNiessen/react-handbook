@@ -1,4 +1,6 @@
-const FinishScreen = ({ points, maxPossiblePoints, highscore }) => {
+import { ACTION_TYPE } from './App';
+
+const FinishScreen = ({ dispatch, points, maxPossiblePoints, highscore }) => {
 	const percentage = (points / maxPossiblePoints) * 100;
 
 	let emoji = '';
@@ -15,6 +17,12 @@ const FinishScreen = ({ points, maxPossiblePoints, highscore }) => {
 				({Math.ceil(percentage)}%)
 			</p>
 			<p className="highscore">(Highscore: {highscore} points)</p>
+			<button
+				className="btn btn-ui"
+				onClick={() => dispatch({ type: ACTION_TYPE.RESTART })}
+			>
+				Restart
+			</button>
 		</>
 	);
 };
