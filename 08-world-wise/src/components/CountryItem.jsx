@@ -1,14 +1,12 @@
 import styles from './CountryItem.module.css';
 
-const CountryItem = ({ country }) => {
+const CountryItem = ({ city }) => {
 	return (
 		<li className={styles.countryItem}>
-			<span>{country.emoji}</span>
-			<span>{country.country}</span>
+			<span>{city.emoji}</span>
+			<span>{city.country}</span>
 		</li>
 	);
 };
 
 export { CountryItem };
-
-export default CountryItem;

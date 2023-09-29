@@ -1,4 +1,4 @@
-export const SIM_NETWORK_DELAY_MS = 2_000;
+export const SIM_NETWORK_DELAY_MS = 1_000;
 export const SIM_NETWORK_ERROR = false;
 export const SIM_DATA = {
 	cities: [
@@ -37,6 +37,18 @@ export const SIM_DATA = {
 				lng: 13.376933665713324,
 			},
 			id: 98443197,
+		},
+		{
+			cityName: 'Hamburg',
+			country: 'Germany',
+			emoji: '🇩🇪',
+			date: '2027-02-12T09:24:11.863Z',
+			notes: 'Amazing 😃',
+			position: {
+				lat: 52.53586782505711,
+				lng: 13.376933665713324,
+			},
+			id: 984437197,
 		},
 	],
 };
