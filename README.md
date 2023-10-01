@@ -48,6 +48,8 @@
 |---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 8: World Wise | Creating simple routes with React Router, navigating between routes with Link and NavLink, dynamic routing, nested routes, shared layouts, outlet context (useOutletContext), defining routes as a js object (useRoutes), the Navigate component, the useNavigate Hook, the useSearchParams Hook, the useLocation Hook and passing state |
 
+- ### Advanced State Management: The Context API
+
 <br>
 Credits
 
