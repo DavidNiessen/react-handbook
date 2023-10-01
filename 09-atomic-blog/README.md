@@ -2,7 +2,7 @@
 
 - 1: The context API
 - 2: Creating the context
-- 3: Creating a context provider
+- 3: Creating a context Provider
 - 4: Accessing the context values
 - 5: Custom Provider and Hook
 
@@ -32,10 +32,10 @@ const DarkModeContext = createContext();
 export { DarkModeContext };
 ```
 
-# -> 3: Creating a context provider
+# -> 3: Creating a context Provider
 
 To allow children to access the context's values, we need to
-create a provider. All children will have access to its values.<br>
+create a Provider. All children will have access to its values.<br>
 
 ```jsx
 import { useState } from 'react';
