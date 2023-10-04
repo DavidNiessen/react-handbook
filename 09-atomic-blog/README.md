@@ -108,8 +108,6 @@ import { useState } from 'react';
 import { DarkModeProvider } from './DarkModeContext';
 
 const MyComponent = () => {
-	const [isDarkMode, setDarkMode] = useState(false);
-
 	return (
 		<DarkModeProvider>
 			<Header />
