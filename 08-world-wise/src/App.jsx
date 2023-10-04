@@ -1,10 +1,4 @@
-import {
-	BrowserRouter,
-	Navigate,
-	Route,
-	Routes,
-	useLocation,
-} from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
 import { Homepage } from './pages/Homepage.jsx';
 import { Product } from './pages/Product.jsx';
@@ -21,10 +15,6 @@ import { AuthProvider } from './context/FakeAuthContext.jsx';
 import { ProtectedRoute } from './pages/ProtectedRoute.jsx';
 
 const App = () => {
-	// TEST
-	const location = useLocation();
-	console.log(location);
-
 	return (
 		<CitiesProvider>
 			<AuthProvider>
