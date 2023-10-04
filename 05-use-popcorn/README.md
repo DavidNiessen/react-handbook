@@ -1,15 +1,18 @@
 # Content:
 
 - 1: The useEffect Hook
-- 2: The useRef Hook
-- 3: useState vs useRef
-- 4: Custom Hooks
+- 2: The useLayoutEffect Hook
+- 3: The useRef Hook
+- 4: useState vs useRef
+- 5: Custom Hooks
 
 # -> 1: The useEffect Hook
 
 The useEffect Hook allows you to perform side effects in your components.<br>
 Some examples of side effects are: fetching data, directly updating the DOM, and timers.<br>
 You should use one useEffect for each side effect.
+
+The useEffect Hook is executed **after** the component was painted to the screen.
 
 **IMPORTANT**: Side effects should **<u>never</u>** be performed outside the useEffect Hook.
 
@@ -64,7 +67,22 @@ useEffect(() => {
 }, []);
 ```
 
-# -> 2: The useRef Hook
+# -> 2: The useLayoutEffect Hook
+
+The useLayoutEffect Hook works in the same way as the useEffect Hook.<br>
+The difference is that useLayoutEffect is executed **before** the component is
+painted to the screen.
+
+This can be useful if you, for example want to navigate to a different page before the component
+is painted.
+
+```jsx
+useLayoutEffect(() => {
+  // do something here
+}, []);
+```
+
+# -> 3: The useRef Hook
 
 The useRef Hook allows you to persist values between renders.<br>
 It can be used to store a mutable value that does not cause a re-render when updated.<br>
@@ -124,11 +142,11 @@ const MyComponent = () => {
 };
 ```
 
-# -> 3: useState vs useRef
+# -> 4: useState vs useRef
 
 ![slides 001](https://github.com/zSkillCode/react-handbook/assets/68539499/f1fd7238-6a4a-42e5-a291-511342dde5db)
 
-# -> 4: Custom Hooks
+# -> 5: Custom Hooks
 
 Hooks are reusable functions.<br>
 When you have component logic that needs to be used by multiple components,

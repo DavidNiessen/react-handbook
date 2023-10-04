@@ -1,11 +1,24 @@
 import styles from './Login.module.css';
-import { useState } from 'react';
-import { AppNav } from '../components/AppNav.jsx';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import { PageNav } from '../components/PageNav.jsx';
+import { useAuth } from '../context/FakeAuthContext.jsx';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
 	const [email, setEmail] = useState('jack@example.com');
 	const [password, setPassword] = useState('qwerty');
+	const navigate = useNavigate();
+	const { login, isAuthenticated } = useAuth();
+
+	useLayoutEffect(() => {
+		if (isAuthenticated) navigate('/app');
+	}, [isAuthenticated, navigate]);
+
+	const handleLogin = event => {
+		event.preventDefault();
+
+		login(email, password);
+	};
 
 	return (
 		<main className={styles.login}>
@@ -33,7 +46,7 @@ const Login = () => {
 				</div>
 
 				<div>
-					<button>Login</button>
+					<button onClick={handleLogin}>Login</button>
 				</div>
 			</form>
 		</main>
