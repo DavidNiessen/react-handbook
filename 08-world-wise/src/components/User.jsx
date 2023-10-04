@@ -1,4 +1,6 @@
 import styles from './User.module.css';
+import { useAuth } from '../context/FakeAuthContext.jsx';
+import { useNavigate } from 'react-router-dom';
 
 const FAKE_USER = {
 	name: 'Jack',
@@ -8,9 +10,15 @@ const FAKE_USER = {
 };
 
 const User = () => {
-	const user = FAKE_USER;
+	const { user, logout } = useAuth();
+	const navigate = useNavigate();
 
-	function handleClick() {}
+	if (!user) return null;
+
+	function handleClick() {
+		logout();
+		navigate('/');
+	}
 
 	return (
 		<div className={styles.user}>
