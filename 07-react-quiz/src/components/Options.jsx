@@ -1,4 +1,4 @@
-import { ACTION_TYPE } from './App';
+import { ACTION_TYPE } from '../constants';
 
 const Options = ({ question, dispatch, answer }) => {
 	const hasAnswered = answer !== null;

@@ -1,4 +1,4 @@
-import { ACTION_TYPE } from './App';
+import { ACTION_TYPE } from '../constants';
 
 const StartScreen = ({ numQuestions, dispatch }) => {
 	return (

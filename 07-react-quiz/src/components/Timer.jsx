@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { ACTION_TYPE } from './App';
+import { ACTION_TYPE } from '../constants';
 
 const Timer = ({ dispatch, secondsRemaining }) => {
 	const minutes = Math.floor(secondsRemaining / 60);

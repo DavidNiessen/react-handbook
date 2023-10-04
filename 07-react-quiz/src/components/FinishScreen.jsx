@@ -1,4 +1,4 @@
-import { ACTION_TYPE } from './App';
+import { ACTION_TYPE } from '../constants';
 
 const FinishScreen = ({ dispatch, points, maxPossiblePoints, highscore }) => {
 	const percentage = (points / maxPossiblePoints) * 100;
