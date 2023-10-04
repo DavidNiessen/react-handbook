@@ -24,9 +24,9 @@
 - #### useEffect and Data Fetching
 - #### useRef and Custom Hooks
 
-| Project       | Concepts explained in README                                          |
-|---------------|-----------------------------------------------------------------------|
-| 5: usePopcorn | The useEffect Hook, the useRef Hook, useState vs useRef, custom Hooks |
+| Project       | Concepts explained in README                                                                    |
+|---------------|-------------------------------------------------------------------------------------------------|
+| 5: usePopcorn | The useEffect Hook, the useLayoutEffect Hook, the useRef Hook, useState vs useRef, custom Hooks |
 
 - #### LEGACY: Class-Based React
 
