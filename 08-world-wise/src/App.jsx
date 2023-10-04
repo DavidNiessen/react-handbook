@@ -1,4 +1,10 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import {
+	BrowserRouter,
+	HashRouter,
+	Navigate,
+	Route,
+	Routes,
+} from 'react-router-dom';
 
 import { Homepage } from './pages/Homepage.jsx';
 import { Product } from './pages/Product.jsx';
@@ -18,7 +24,8 @@ const App = () => {
 	return (
 		<CitiesProvider>
 			<AuthProvider>
-				<BrowserRouter>
+				{/* HashRouter is used here to support deployment on GitHub pages*/}
+				<HashRouter>
 					<Routes>
 						<Route index element={<Homepage />} />
 						<Route path="product" element={<Product />} />
@@ -40,7 +47,7 @@ const App = () => {
 						</Route>
 						<Route path="*" element={<PageNotFound />} />
 					</Routes>
-				</BrowserRouter>
+				</HashRouter>
 			</AuthProvider>
 		</CitiesProvider>
 	);
