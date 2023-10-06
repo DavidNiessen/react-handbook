@@ -1,4 +1,10 @@
-import { createContext, useContext, useEffect, useReducer } from 'react';
+import {
+	createContext,
+	useCallback,
+	useContext,
+	useEffect,
+	useReducer,
+} from 'react';
 import { SIM_DATA, SIM_NETWORK_DELAY_MS } from '../config.js';
 
 const CitiesContext = createContext();
@@ -94,27 +100,30 @@ const CitiesProvider = ({ children }) => {
 		fetchCities();
 	}, []);
 
-	const getCity = async id => {
-		if (+id === currentCity.id) return;
+	const getCity = useCallback(
+		async id => {
+			if (+id === currentCity.id) return;
 
-		const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+			const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-		try {
-			dispatch({ type: ACTION.LOADING });
+			try {
+				dispatch({ type: ACTION.LOADING });
 
-			await delay(SIM_NETWORK_DELAY_MS);
-			const data = SIM_DATA.cities.find(city => city.id === +id);
-			dispatch({
-				type: ACTION.CITY.LOADED,
-				payload: data,
-			});
-		} catch {
-			dispatch({
-				type: ACTION.REJECTED,
-				payload: 'There was an error loading the city...',
-			});
-		}
-	};
+				await delay(SIM_NETWORK_DELAY_MS);
+				const data = SIM_DATA.cities.find(city => city.id === +id);
+				dispatch({
+					type: ACTION.CITY.LOADED,
+					payload: data,
+				});
+			} catch {
+				dispatch({
+					type: ACTION.REJECTED,
+					payload: 'There was an error loading the city...',
+				});
+			}
+		},
+		[currentCity.id],
+	);
 
 	const createCity = async newCity => {
 		const delay = ms => new Promise(resolve => setTimeout(resolve, ms));

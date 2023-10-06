@@ -10,7 +10,7 @@ import { Button } from './Button.jsx';
 import { BackButton } from './BackButton.jsx';
 import { useURLPosition } from '../hooks/useURLPosition.js';
 import { Message } from './Message.jsx';
-import { Spinner } from './Spinner.jsx';
+import Spinner from './Spinner.jsx';
 import { useCities } from '../context/CitiesContext.jsx';
 import { useNavigate } from 'react-router-dom';
 

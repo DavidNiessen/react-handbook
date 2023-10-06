@@ -25,4 +25,4 @@ const Homepage = () => {
 	);
 };
 
-export { Homepage };
+export default Homepage;

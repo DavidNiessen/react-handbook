@@ -43,13 +43,12 @@
 | 7: React Quiz | The useReducer Hook          |
 
 - ### Build SPAs (Single Page Applications) with React Router
-
-| Project       | Concepts explained in README                                                                                                                                                                                                                                                                                                             |
-|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 8: World Wise | Creating simple routes with React Router, navigating between routes with Link and NavLink, dynamic routing, nested routes, shared layouts, outlet context (useOutletContext), defining routes as a js object (useRoutes), the Navigate component, the useNavigate Hook, the useSearchParams Hook, the useLocation Hook and passing state |
-
 - ### Advanced State Management: The Context API
 - ### Performance optimization
+
+| Project       | Concepts explained in README                                                                                                                                                                                                                                                                                                                                                      |
+|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 8: World Wise | Creating simple routes with React Router, navigating between routes with Link and NavLink, dynamic routing, nested routes, shared layouts, outlet context (useOutletContext), defining routes as a js object (useRoutes), the Navigate component, the useNavigate Hook, the useSearchParams Hook, the useLocation Hook and passing state, code splitting with lazy() and Suspense |
 
 | Project        | Concepts explained in README                                                                                                                                                           |
 |----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

@@ -9,4 +9,4 @@ const SpinnerFullPage = () => {
 	);
 };
 
-export { SpinnerFullPage };
+export default SpinnerFullPage;

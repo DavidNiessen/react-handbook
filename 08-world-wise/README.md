@@ -11,6 +11,7 @@
 - 9: The useNavigate Hook
 - 10: The useSearchParams Hook
 - 11: The useLocation Hook and passing state
+- 12: Code splitting with lazy() and Suspense
 
 # -> 1: Creating simple routes with React Router
 
@@ -296,4 +297,53 @@ be accessed using the useLocation hook:
 
 ```jsx
 <Link to="/account" state={{ id: 3765342345 }}>
+```
+
+# -> 12: Code splitting with lazy() and Suspense
+
+Code splitting allows us to dynamically download files (such as js) to the browser
+as they are needed.<br>
+This allows us to improve performance because the code bundle is smaller.
+
+It is common to implement code splitting in the component where routing is done.
+
+Code splitting consists of two steps:
+
+- 1: Lazy loading components
+- 2: Providing a fallback (for example loader/spinner) with Suspense
+
+**Note:** lazy currently only supports default exports.
+
+In this example, all pages will be lazy loaded.
+
+```jsx
+import { lazy, Suspense } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import SpinnerFullPage from './components/Spinner';
+
+const Homepage = lazy(() => import('./pages/Homepage'));
+const Product = lazy(() => import('./pages/Product'));
+const Pricing = lazy(() => import('./pages/Pricing'));
+const PageNotFound = lazy(() => import('./pages/PageNotFound'));
+const AppLayout = lazy(() => import('./pages/AppLayout'));
+const Login = lazy(() => import('./pages/Login'));
+
+const App = () => {
+	return (
+		<BrowserRouter>
+			<Suspense fallback={<Spinner />}>
+				<Routes>
+					<Route index element={<Homepage />} />
+					<Route path="product" element={<Product />} />
+					<Route path="pricing" element={<Pricing />} />
+					<Route path="login" element={<Login />} />
+					<Route path="*" element={<PageNotFound />} />
+				</Routes>
+			</Suspense>
+		</BrowserRouter>
+	);
+};
+
+export { App };
 ```

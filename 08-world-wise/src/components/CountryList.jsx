@@ -1,5 +1,5 @@
 import styles from './CountryList.module.css';
-import { Spinner } from './Spinner.jsx';
+import Spinner from './Spinner.jsx';
 import { CountryItem } from './CountryItem.jsx';
 import { Message } from './Message.jsx';
 import { useCities } from '../context/CitiesContext.jsx';

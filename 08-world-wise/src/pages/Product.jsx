@@ -29,4 +29,4 @@ const Product = () => {
 	);
 };
 
-export { Product };
+export default Product;
