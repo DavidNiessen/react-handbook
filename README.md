@@ -54,6 +54,9 @@
 |----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 9: Atomic Blog | The context API, creating the context, creating a context Provider, accessing the context values, custom Provider and Hook, the memo() function, the useMemo() and useCallback() Hooks |
 
+| Project           | Concepts explained in README |
+|-------------------|------------------------------|
+| 10: Workout Timer |                              |
 <br>
 Credits
 

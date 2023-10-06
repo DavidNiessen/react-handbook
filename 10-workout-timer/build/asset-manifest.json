@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "./static/css/main.98da1142.css",
+    "main.js": "./static/js/main.110260bb.js",
+    "static/media/ClickSound.m4a": "./static/media/ClickSound.f7e8f889fedabc8d298c.m4a",
+    "index.html": "./index.html",
+    "main.98da1142.css.map": "./static/css/main.98da1142.css.map",
+    "main.110260bb.js.map": "./static/js/main.110260bb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.98da1142.css",
+    "static/js/main.110260bb.js"
+  ]
+}
