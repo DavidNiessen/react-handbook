@@ -5,6 +5,8 @@
 - 3: Creating a context Provider
 - 4: Accessing the context values
 - 5: Custom Provider and Hook
+- 6: The memo() function
+- 7: The useMemo() and useCallback() Hooks
 
 # -> 1: The context API
 
@@ -132,4 +134,64 @@ const Header = () => {
 		</header>
 	);
 };
+```
+
+# -> 6: The memo() function
+
+-> Think of memoization as caching a value so that it does not need to be recalculated.
+
+- The memo() function is used to create a component that will **not re-render when
+  its parent re-renders**, as long as the **props stay the same between renders**.
+- **This only affects props!** A memoized component will still re-render when its **own
+  state** changes or a **context that it's subscribed to** changes.
+- Only makes sense when the component is **heavy** (slow rendering), **re-renders often**
+  and does so **with the same props**.
+
+The following component will now only re-render when the passed todos change.
+
+```jsx
+const Todos = ({ todos }) => {
+	return (
+		<>
+			<h2>My Todos</h2>
+			{todos.map((todo, index) => {
+				return <p key={index}>{todo}</p>;
+			})}
+		</>
+	);
+};
+
+export default memo(Todos);
+```
+
+# -> 7: The useMemo() and useCallback() Hooks
+
+- Used to memoize values (useMemo) and functions (useCallback) between renders
+- Values passed into useMemo and useCallback will be **stored in memory** ("cached")
+  and returned in subsequent re-renders, as long as **dependencies ("inputs")
+  stay the same**
+- useMemo and useCallback have a **dependency array** (like useEffect):
+  whenever one **dependency changes**, the value will be **re-created**
+
+Only use them for one of the three use cases:
+
+1 -> Memoizing props to prevent wasted renders (together with memo)<br>
+2 -> Memoizing values to avoid expensive re-calculations on every render<br>
+3 -> Memoizing values that are used in dependency array of another hook
+
+The difference between useMemo and useCallback is that useMemo memoizes the returned
+value and useCallback memoizes the function itself.
+
+```jsx
+import { useMemo } from 'react';
+
+const calculation = useMemo(() => expensiveCalculation(count), [count]);
+```
+
+```jsx
+import { useCallback } from 'react';
+
+const addTodo = useCallback(() => {
+	setTodos(currentTodos => [...currentTodos, 'New Todo']);
+}, [todos]);
 ```
