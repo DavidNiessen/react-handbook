@@ -57,6 +57,12 @@
 | Project           | Concepts explained in README |
 |-------------------|------------------------------|
 | 10: Workout Timer |                              |
+
+- ### Redux and Modern Redux Toolkit (with Thunks)
+
+| Project         | Concepts explained in README                                                      |
+|-----------------|-----------------------------------------------------------------------------------|
+| 11: Redux Intro | (LEGACY) Redux, React Redux: Provider, the useSelector Hook, the useDispatch Hook |
 <br>
 Credits
 
