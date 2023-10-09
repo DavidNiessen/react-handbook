@@ -63,6 +63,9 @@
 | Project         | Concepts explained in README                                                                                                                            |
 |-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 11: Redux Intro | (LEGACY) Redux, React Redux: Provider, the useSelector Hook, the useDispatch Hook, Redux Middleware and Thunks, Redux Toolkit (RTK), createAsyncThunk() |
+
+### #4: PROFESSIONAL REACT DEVELOPMENT
+
 <br>
 Credits
 

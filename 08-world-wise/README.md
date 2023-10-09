@@ -202,24 +202,37 @@ Another way to define routes is using the useRoutes hook.<br>
 It allows us creating routes using JavaScript objects.
 
 ```jsx
-import { useRoutes } from 'react-router';
+import { createBrowserRouter } from 'react-router-dom';
+
+const router = createHashRouter([
+	{
+		element: <AppLayout />,
+		children: [
+			{
+				path: '/',
+				element: <Home />,
+			},
+			{
+				path: '/cart',
+				element: <Cart />,
+			},
+			{
+				path: '/order/new',
+				element: <CreateOrder />,
+			},
+			{
+				path: '/order/:orderId',
+				element: <Order />,
+			},
+		],
+	},
+]);
 
 const App = () => {
-	const routes = useRoutes([
-		{
-			path: '/',
-			element: <Homepage />,
-		},
-		{
-			path: '/users',
-			children: [
-				{ index: true, element: <UserList /> },
-				{ path: ':id', element: <User /> },
-			],
-		},
-	]);
-	return routes;
+	return <RouterProvider router={router} />;
 };
+
+export default App;
 ```
 
 # -> 8: The Navigate component
