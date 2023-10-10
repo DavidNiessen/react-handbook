@@ -66,6 +66,13 @@
 
 ### #4: PROFESSIONAL REACT DEVELOPMENT
 
+- ### React Router with Data Loading
+- ### Tailwind CSS
+
+| Project              | Concepts explained in README                                                                                                                                                 |
+|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 12: Fast React Pizza | Fetching Data with React Router Loaders, the useLoaderData Hook, displaying a Loader using the useNavigation Hook, handling Errors with React Router, the useRouteError Hook |
+
 <br>
 Credits
 
